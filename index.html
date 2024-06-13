@@ -1,82 +1,163 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ru" style="font-size: 100px;">
 <head>
-    <meta charset="utf-8"/>
-    <title>Exported Data</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="css/style.css" rel="stylesheet"/>
-    <script src="js/script.js" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Xindor</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="Xindor, telegram, tiktok, youtube">
+    <meta name="description" content="Xindor">
+    <meta property="og:description" content="Xindor">
+    <meta property="og:url" content="/">
+    <meta property="type" content="info">
+    <meta property="og:site_name" content="Xindor">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px;
             margin: 0;
             padding: 0;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 100vh;
-            justify-content: space-between;
-        }
-        .page_wrap {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            flex-grow: 1;
             background: url('pic/back.png') no-repeat center center fixed;
             background-size: cover;
+            color: #fff;
         }
-        .page_header {
-            width: 100%;
-            background-color: #181818;
-            padding: 10px 0;
-            border-bottom: 1px solid #cccccc;
+        .content {
+            backdrop-filter: blur(10px);
             text-align: center;
+            width: 50%;
+            margin: auto;
+            background-color: #000000ad;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.7s;
         }
-        .page_header .title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f0f0f0;
+        .content:hover {
+            transform: scale(1.02);
         }
-        .page_body {
+        .buttons {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
         }
-        .text, .link {
-            color: #cccccc;
-            font-weight: normal;
-            font-size: 14px;
-            margin: 5px 0;
-            white-space: nowrap;
-        }
-        .link {
+        .button {
+            margin: 5px;
+            padding: 30px;
+            width: calc(100% / 3 - 20px);
+            color: #fff;
             text-decoration: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
         }
-        .link:hover {
-            text-decoration: underline;
+        .telegram {
+            background: linear-gradient(90deg, #0099ff, #2cb9ff);
         }
-        .image {
-            margin-top: 10px;
+        .tiktok {
+            background: linear-gradient(90deg, #22de6a, #4CE888);
+        }
+        .youtube {
+            background: linear-gradient(90deg, #ff0000, #ff3333);
+        }
+        .more {
+            background-color: #808080;
+            cursor: pointer;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        .flowtext {
+            background: linear-gradient(90deg, #76c1ff, #a77bff, #83fbff, rgb(155, 112, 255), #76c1ff);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textflow 5s linear infinite;
+        }
+        @keyframes textflow {
+            from {background-position: 0% center}
+            to {background-position: 200% center}
+        }
+        @media (max-width: 900px) {
+            .button {
+                padding: 15px;
+                width: calc(100% - 30px);
+            }
+            .content {
+                backdrop-filter: blur(10px);
+                text-align: center;
+                width: 80%;
+                margin: auto;
+                background-color: #000000ad;
+                border-radius: 20px;
+                padding: 20px;
+            }
+            body {
+                font-family: "Montserrat", sans-serif;
+                font-size: 15px;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background: url('pic/back.png') no-repeat center center fixed;
+                background-size: cover;
+                color: #fff;
+            }
+        }
+        .hidden-panel {
+            display: none;
+            margin-top: 20px;
+        }
+        .show-panel {
+            display: block;
         }
     </style>
 </head>
-
-<body onload="CheckLocation();">
-    <div class="page_wrap">
-        <div class="page_header">
-            <div class="title">Xindor</div>
-        </div>
-        <div class="page_body">
-            <div class="text">1</div>
-            <a class="link" href="https://t.me/whisper_void_bot" target="_blank">Мой телеграм - @whisper_void_bot (бот для связи)</a>
-            <div class="text"> ︎</div>
-            <a class="link" href="https://www.tiktok.com/@xindor_klm?_t=8n7QsIcNicw&_r=1" target="_blank">Мой тик ток - @xindor_klm</a>
-            <img class="image" src="pic/ttk.png" alt="TikTok Image" width="200" height="200"/>
-            <div class="text">4</div>
-            <div class="text">5</div>
+<body>
+<div class="content">
+    <h1 class="flowtext">Xindor</h1>
+    <div style="text-align: left;">
+        <b>Привет, я Ксаня, разбираюсь во многих сферах, и прекратил свою деятельность где либо.</b><br><br>
+    </div>
+    <div class="buttons">
+        <a href="https://t.me/whisper_void_bot" class="button telegram">
+            <strong>Мой телеграм - @whisper_void_bot (бот для связи)</strong>
+        </a>
+        <a href="https://www.tiktok.com/@xindor_klm?_t=8n7QsIcNicw&_r=1" class="button tiktok">
+            <strong>Мой тик ток - @xindor_klm</strong>
+        </a>
+        <a href="https://youtube.com/@Xindor_klm" class="button youtube">
+            <strong>Мой ютуб - @Xindor_klm</strong>
+        </a>
+        <div class="button more" onclick="togglePanel()">
+            <strong>Еще</strong>
         </div>
     </div>
+    <div class="hidden-panel" id="hiddenPanel">
+        <p>Тут давайте побольше расскажу о себе.</p>
+        <p>(mbti: INTJ), (he/him, он/его, він/його)</p>
+        <p>Любимая группа: Валентин Стрыкало</p>
+    </div>
+</div>
+<script>
+    function togglePanel() {
+        var panel = document.getElementById('hiddenPanel');
+        panel.classList.toggle('show-panel');
+    }
+</script>
 </body>
-
 </html>
