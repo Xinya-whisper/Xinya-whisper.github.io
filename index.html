@@ -1,166 +1,112 @@
 <!DOCTYPE html>
-<html lang="ru" style="font-size: 100px;">
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Xindor</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <meta name="keywords" content="Xindor, telegram, tiktok, youtube">
-    <meta name="description" content="Xindor">
-    <meta property="og:description" content="Xindor">
-    <meta property="og:url" content="/">
-    <meta property="type" content="info">
-    <meta property="og:site_name" content="Xindor">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Рождения!</title>
     <style>
+        /* Общие стили для милого оформления */
         body {
-            font-family: "Montserrat", sans-serif;
-            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec; /* Светло-розовый фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: url('pic/back.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            color: #d81b60;
         }
-        .content {
-            backdrop-filter: blur(10px);
-            text-align: center;
-            width: 50%;
-            margin: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: 0.7s;
-        }
-        .content:hover {
-            transform: scale(1.02);
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .button {
-            margin: 5px;
+
+        .container {
+            background: white;
             padding: 30px;
-            width: calc(100% / 3 - 20px);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .telegram {
-            background: linear-gradient(90deg, #0099ff, #2cb9ff);
-        }
-        .tiktok {
-            background: linear-gradient(90deg, #22de6a, #4CE888);
-        }
-        .youtube {
-            background: linear-gradient(90deg, #ff0000, #ff3333);
-        }
-        .more {
-            background-color: #808080;
-            cursor: pointer;
-        }
-        .button:hover {
-            transform: scale(1.1);
-        }
-        .flowtext {
-            background: linear-gradient(90deg, #76c1ff, #a77bff, #83fbff, rgb(155, 112, 255), #76c1ff);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textflow 5s linear infinite;
-        }
-        @keyframes textflow {
-            from {background-position: 0% center}
-            to {background-position: 200% center}
-        }
-        @media (max-width: 900px) {
-            .button {
-                padding: 15px;
-                width: calc(100% - 30px);
-            }
-            .content {
-                backdrop-filter: blur(10px);
-                text-align: center;
-                width: 80%;
-                margin: auto;
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 20px;
-                padding: 20px;
-            }
-            body {
-                font-family: "Montserrat", sans-serif;
-                font-size: 15px;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                background: url('pic/back.png') no-repeat center center fixed;
-                background-size: cover;
-                color: #fff;
-            }
-        }
-        .hidden-panel {
-            display: none;
-            margin-top: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 20px;
-            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
         }
-        .show-panel {
-            display: block;
+
+        img {
+            max-width: 200px;
+            border-radius: 15px;
+            margin-bottom: 20px;
         }
+
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        p { font-size: 16px; line-height: 1.5; }
+
+        /* Кнопки */
+        .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        .btn-next { background-color: #ec407a; color: white; }
+        .btn-no { background-color: #1e88e5; color: white; }
+        .back-link { font-size: 12px; color: #ad1457; text-decoration: underline; cursor: pointer; display: block; margin-top: 15px; }
+
+        /* Скрытие экранов */
+        .screen { display: none; }
+        .active { display: block; }
+
+        #final-text { text-align: left; font-size: 14px; max-height: 300px; overflow-y: auto; padding: 10px; }
     </style>
 </head>
 <body>
-<div class="content">
-    <h1 class="flowtext">Xindor</h1>
-    <div style="text-align: left;">
-        <b>Привет, я Ксаня, разбираюсь во многих сферах, и прекратил свою деятельность где либо.</b><br><br>
-    </div>
-    <div class="buttons">
-        <a href="https://t.me/whisper_void_bot" class="button telegram">
-            <strong>Мой телеграм - @whisper_void_bot (бот для связи)</strong>
-        </a>
-        <a href="https://www.tiktok.com/@xindor_klm?_t=8n7QsIcNicw&_r=1" class="button tiktok">
-            <strong>Мой тик ток - @xindor_klm</strong>
-        </a>
-        <a href="https://youtube.com/@Xindor_klm" class="button youtube">
-            <strong>Мой ютуб - @Xindor_klm</strong>
-        </a>
-        <div class="button more" onclick="togglePanel()">
-            <strong>Еще</strong>
+
+    <div class="container">
+        
+        <div id="screen1" class="screen active">
+            <img src="img1.jpg" alt="Милая картинка 1">
+            <h1>С днём рождения,<br> моё счастьечко! (⁠｡⁠♡⁠‿⁠♡⁠｡⁠) Ты моя Биночка 💕</h1>
+            <p>Нажимай на кнопку "Далее", милая!!! (⁠灬⁠º⁠‿⁠º⁠灬⁠)⁠♡</p>
+            <button class="btn-next" onclick="showScreen('screen2')">Далее!! ❤️~</button>
         </div>
+
+        <div id="screen2" class="screen">
+            <img src="img2.jpg" alt="Ты моя Биночка">
+            <p>☺️ Откроешь послание? ૮ ˶ᵔ ᵕ ᵔ˶ ა</p>
+            <div class="btn-group">
+                <button class="btn-next" onclick="showScreen('screen4')">конечно❤️!!!</button>
+                <button class="btn-no" onclick="showScreen('screen3')">неттт (почему😭?!)</button>
+            </div>
+            <span class="back-link" onclick="showScreen('screen1')">вернуться назад ♡</span>
+        </div>
+
+        <div id="screen3" class="screen">
+            <img src="img3.jpg" alt="Плачущий котик">
+            <p style="color: #c2185b;">почему? милая, подумай ещё!! пожалуйста((</p>
+            <span class="back-link" onclick="showScreen('screen2')">вернуться назад ♡</span>
+        </div>
+
+        <div id="screen4" class="screen">
+            <img src="img4.jpg" alt="I love you">
+            <h1>I love you</h1>
+            <div id="final-text">
+                Тут твой длинный и красивый текст поздравления... <br><br>
+                Желаю тебе самого лучшего, чтобы каждый день был как праздник. Ты — мой самый главный подарок!
+            </div>
+            <span class="back-link" onclick="showScreen('screen1')">В начало ♡</span>
+        </div>
+
     </div>
-    <div class="hidden-panel" id="hiddenPanel">
-        <p style="color: #fff;">Тут давайте побольше расскажу о себе.</p>
-        <p style="color: #fff;">(mbti: INTJ), (he/him, он/его, він/його)</p>
-        <p style="color: #fff;">Любимая группа: Валентин Стрыкало</p>
-    </div>
-</div>
-<script>
-    function togglePanel() {
-        var panel = document.getElementById('hiddenPanel');
-        panel.classList.toggle('show-panel');
-    }
-</script>
+
+    <script>
+        function showScreen(screenId) {
+            // Прячем все экраны
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            // Показываем нужный
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
