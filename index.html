@@ -1,112 +1,180 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днем Рождения!</title>
+    <title>Пори року</title>
     <style>
-        /* Общие стили для милого оформления */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fce4ec; /* Светло-розовый фон */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #d81b60;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
             text-align: center;
-            max-width: 400px;
-            width: 90%;
+            padding: 20px;
+            margin: 0;
+            transition: background-color 0.5s;
         }
-
-        img {
-            max-width: 200px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+        
+        h1 {
+            font-size: 8vw;
+            margin-bottom: 10px;
         }
-
-        h1 { font-size: 24px; margin-bottom: 10px; }
-        p { font-size: 16px; line-height: 1.5; }
-
-        /* Кнопки */
-        .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        
+        p {
+            font-size: 4.5vw;
+            max-width: 90%;
+            margin: 0 auto 20px;
+            line-height: 1.4;
+        }
+        
+        #image svg {
+            max-width: 80vw;
+            height: auto;
+        }
+        
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
         
         button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
+            font-size: 4.5vw;
+            padding: 12px 24px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #fff;
             cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
+            flex: 1 1 120px;
+            max-width: 200px;
         }
-
-        button:hover { transform: scale(1.05); }
-
-        .btn-next { background-color: #ec407a; color: white; }
-        .btn-no { background-color: #1e88e5; color: white; }
-        .back-link { font-size: 12px; color: #ad1457; text-decoration: underline; cursor: pointer; display: block; margin-top: 15px; }
-
-        /* Скрытие экранов */
-        .screen { display: none; }
-        .active { display: block; }
-
-        #final-text { text-align: left; font-size: 14px; max-height: 300px; overflow-y: auto; padding: 10px; }
+        
+        button:hover {
+            background: #eee;
+        }
+        
+        @media (min-width: 600px) {
+            h1 { font-size: 42px; }
+            p { font-size: 18px; max-width: 500px; }
+            button { font-size: 18px; flex: 0 0 auto; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <div id="screen1" class="screen active">
-            <img src="img1.jpg" alt="Милая картинка 1">
-            <h1>С днём рождения,<br> моё счастьечко! (⁠｡⁠♡⁠‿⁠♡⁠｡⁠) Ты моя Биночка 💕</h1>
-            <p>Нажимай на кнопку "Далее", милая!!! (⁠灬⁠º⁠‿⁠º⁠灬⁠)⁠♡</p>
-            <button class="btn-next" onclick="showScreen('screen2')">Далее!! ❤️~</button>
-        </div>
+    <h1 id="title">Літо</h1>
+    <p id="text">Літо — найтепліша пора року. Дні довгі, сонце світить яскраво, і всі насолоджуються відпочинком на природі.</p>
+    
+    <div id="image">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="40" fill="#FFD700" />
+            <line x1="100" y1="20" x2="100" y2="50" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="100" y1="150" x2="100" y2="180" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="20" y1="100" x2="50" y2="100" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="150" y1="100" x2="180" y2="100" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="43" y1="43" x2="64" y2="64" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="136" y1="136" x2="157" y2="157" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="43" y1="157" x2="64" y2="136" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+            <line x1="136" y1="64" x2="157" y2="43" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+    </div>
 
-        <div id="screen2" class="screen">
-            <img src="img2.jpg" alt="Ты моя Биночка">
-            <p>☺️ Откроешь послание? ૮ ˶ᵔ ᵕ ᵔ˶ ა</p>
-            <div class="btn-group">
-                <button class="btn-next" onclick="showScreen('screen4')">конечно❤️!!!</button>
-                <button class="btn-no" onclick="showScreen('screen3')">неттт (почему😭?!)</button>
-            </div>
-            <span class="back-link" onclick="showScreen('screen1')">вернуться назад ♡</span>
-        </div>
-
-        <div id="screen3" class="screen">
-            <img src="img3.jpg" alt="Плачущий котик">
-            <p style="color: #c2185b;">почему? милая, подумай ещё!! пожалуйста((</p>
-            <span class="back-link" onclick="showScreen('screen2')">вернуться назад ♡</span>
-        </div>
-
-        <div id="screen4" class="screen">
-            <img src="img4.jpg" alt="I love you">
-            <h1>I love you</h1>
-            <div id="final-text">
-                Поздравляю тебя с днём рождения, милая. Я желаю тебе всего наилучшего и чтобы ты была счастлива. Но также я хочу чтобы мы были вместе. И я буду стремится к этому, ятебя очень люблю и хочу любить всегда <br><br>
-                Также хотелось бы добавить.. Ты Моя Биночка, Моя Фуриночка, Моя Толиндис, Моя Яэ Мико, Моя Ведьмочка, Моя Богиня, Моя Котюня, Моя Кролик Японец, И самое главное - Моя любимая девочка
-            </div>
-            <span class="back-link" onclick="showScreen('screen1')">В начало ♡</span>
-        </div>
-
+    <div class="buttons">
+        <button onclick="setSpring()">🌷 Весна</button>
+        <button onclick="setSummer()">☀️ Літо</button>
+        <button onclick="setAutumn()">🍁 Осінь</button>
+        <button onclick="setWinter()">❄️ Зима</button>
     </div>
 
     <script>
-        function showScreen(screenId) {
-            // Прячем все экраны
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            // Показываем нужный
-            document.getElementById(screenId).classList.add('active');
+        var title = document.getElementById('title');
+        var text = document.getElementById('text');
+        var image = document.getElementById('image');
+        var body = document.body;
+
+        var springSVG = '<svg width="200" height="200" viewBox="0 0 200 200">' +
+            '<rect x="90" y="120" width="20" height="60" fill="#228B22"/>' +
+            '<circle cx="100" cy="90" r="35" fill="#FF69B4"/>' +
+            '<circle cx="80" cy="80" r="20" fill="#FF1493"/>' +
+            '<circle cx="120" cy="80" r="20" fill="#FF1493"/>' +
+            '<circle cx="100" cy="60" r="20" fill="#FF1493"/>' +
+            '<circle cx="100" cy="100" r="15" fill="#FFD700"/>' +
+            '<ellipse cx="70" cy="170" rx="25" ry="8" fill="#32CD32"/>' +
+            '<ellipse cx="130" cy="170" rx="25" ry="8" fill="#32CD32"/>' +
+            '</svg>';
+
+        var summerSVG = '<svg width="200" height="200" viewBox="0 0 200 200">' +
+            '<circle cx="100" cy="100" r="40" fill="#FFD700" />' +
+            '<line x1="100" y1="20" x2="100" y2="50" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="100" y1="150" x2="100" y2="180" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="20" y1="100" x2="50" y2="100" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="150" y1="100" x2="180" y2="100" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="43" y1="43" x2="64" y2="64" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="136" y1="136" x2="157" y2="157" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="43" y1="157" x2="64" y2="136" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '<line x1="136" y1="64" x2="157" y2="43" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>' +
+            '</svg>';
+
+        var autumnSVG = '<svg width="200" height="200" viewBox="0 0 200 200">' +
+            '<rect x="95" y="80" width="10" height="80" fill="#8B4513"/>' +
+            '<ellipse cx="100" cy="70" rx="40" ry="30" fill="#FF8C00"/>' +
+            '<ellipse cx="70" cy="90" rx="25" ry="20" fill="#D2691E"/>' +
+            '<ellipse cx="130" cy="90" rx="25" ry="20" fill="#D2691E"/>' +
+            '<ellipse cx="85" cy="55" rx="20" ry="15" fill="#FF4500"/>' +
+            '<ellipse cx="115" cy="55" rx="20" ry="15" fill="#FF4500"/>' +
+            '<circle cx="60" cy="150" r="12" fill="#FF8C00"/>' +
+            '<circle cx="140" cy="160" r="10" fill="#D2691E"/>' +
+            '<circle cx="100" cy="170" r="14" fill="#FF4500"/>' +
+            '</svg>';
+
+        var winterSVG = '<svg width="200" height="200" viewBox="0 0 200 200">' +
+            '<circle cx="60" cy="50" r="8" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="140" cy="80" r="10" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="100" cy="40" r="6" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="170" cy="120" r="9" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="40" cy="130" r="7" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="120" cy="150" r="11" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="80" cy="170" r="8" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<rect x="70" y="140" width="60" height="40" rx="20" fill="white" stroke="#87CEEB" stroke-width="2"/>' +
+            '<circle cx="90" cy="155" r="3" fill="#333"/>' +
+            '<circle cx="110" cy="155" r="3" fill="#333"/>' +
+            '<path d="M 95 165 Q 100 170 105 165" stroke="#333" stroke-width="2" fill="none"/>' +
+            '</svg>';
+
+        function setSpring() {
+            body.style.backgroundColor = '#90EE90';
+            title.textContent = 'Весна';
+            text.textContent = 'Весна — час пробудження природи. Все розквітає, співають птахи, і повітря наповнене ароматом квітів.';
+            image.innerHTML = springSVG;
         }
+
+        function setSummer() {
+            body.style.backgroundColor = '#87CEEB';
+            title.textContent = 'Літо';
+            text.textContent = 'Літо — найтепліша пора року. Дні довгі, сонце світить яскраво, і всі насолоджуються відпочинком на природі.';
+            image.innerHTML = summerSVG;
+        }
+
+        function setAutumn() {
+            body.style.backgroundColor = '#FFA500';
+            title.textContent = 'Осінь';
+            text.textContent = 'Осінь — пора золотого листя. Дерева жовтіють, повітря стає прохолодним, і природа готується до зими.';
+            image.innerHTML = autumnSVG;
+        }
+
+        function setWinter() {
+            body.style.backgroundColor = '#E0F7FA';
+            title.textContent = 'Зима';
+            text.textContent = 'Зима — холодна пора року. Йде сніг, все біле, і можна кататися на санках та ліпити сніговика.';
+            image.innerHTML = winterSVG;
+        }
+
+        setSummer();
     </script>
+
 </body>
 </html>
